@@ -850,6 +850,12 @@
       color: var(--muted);
     }
 
+    .copy-status {
+      min-height: 1.5em;
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
     .contact-list {
       display: grid;
       gap: 11px;
@@ -1419,7 +1425,11 @@
             Saya senang berkenalan dan mendengar cerita orang lain. Kamu bisa
             menghubungi saya lewat salah satu cara berikut.
           </p>
-          <a class="button" href="mailto:emailkamu@example.com">Kirim email <span aria-hidden="true">↗</span></a>
+          <div class="actions">
+            <a class="button" href="mailto:emailkamu@example.com">Kirim email <span aria-hidden="true">↗</span></a>
+            <button class="button secondary" id="copy-email" type="button">Salin email</button>
+          </div>
+          <span class="copy-status" id="copy-email-status" role="status" aria-live="polite"></span>
         </div>
         <div class="contact-list reveal">
           <a class="contact-row" href="mailto:emailkamu@example.com">
@@ -1453,6 +1463,8 @@
     const root = document.documentElement;
     const themeToggle = document.getElementById("theme-toggle");
     const menuToggle = document.getElementById("menu-toggle");
+    const copyEmailButton = document.getElementById("copy-email");
+    const copyEmailStatus = document.getElementById("copy-email-status");
     const navigation = document.getElementById("primary-navigation");
     const progressBar = document.querySelector(".reading-progress");
     const backToTop = document.querySelector(".back-to-top");
@@ -1524,6 +1536,43 @@
       root.dataset.theme = isDark ? "dark" : "light";
       themeToggle.setAttribute("aria-label", isDark ? "Aktifkan tema terang" : "Aktifkan tema gelap");
       themeToggle.querySelector("span").textContent = isDark ? "☼" : "◐";
+    });
+
+    copyEmailButton.addEventListener("click", async () => {
+      const emailLink = document.querySelector('.contact-row[href^="mailto:"]');
+      const email = emailLink?.getAttribute("href").replace(/^mailto:/i, "").split("?")[0];
+
+      if (!email) {
+        copyEmailStatus.textContent = "Alamat email belum tersedia.";
+        return;
+      }
+
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(email);
+        } else {
+          const temporaryInput = document.createElement("textarea");
+          temporaryInput.value = email;
+          temporaryInput.setAttribute("readonly", "");
+          temporaryInput.style.position = "fixed";
+          temporaryInput.style.opacity = "0";
+          document.body.append(temporaryInput);
+          temporaryInput.select();
+
+          try {
+            if (!document.execCommand("copy")) {
+              throw new Error("Perintah salin tidak didukung browser.");
+            }
+          } finally {
+            temporaryInput.remove();
+          }
+        }
+
+        copyEmailStatus.textContent = "Alamat email berhasil disalin.";
+      } catch (error) {
+        copyEmailStatus.textContent = "Email tidak dapat disalin. Silakan salin secara manual.";
+        console.error("Gagal menyalin alamat email.", error);
+      }
     });
 
     menuToggle.addEventListener("click", () => {
