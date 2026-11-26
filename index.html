@@ -4,20 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#f5f2eb">
-  <meta name="description" content="Portofolio personal [Nama Kamu] — cerita, karya, dan perjalanan.">
-  <title>Tentang Saya — [Nama Kamu]</title>
+  <meta name="description" content="Portofolio personal [Nama Kamu] — engineer, pembuat produk, dan pembelajar sepanjang hayat.">
+  <title>[Nama Kamu] — Engineer, Builder, dan Pembelajar</title>
   <style>
     :root {
       color-scheme: light;
-      --paper: #f5f2eb;
-      --paper-deep: #ebe6dc;
-      --ink: #20251f;
-      --muted: #6d7169;
-      --green: #314c3b;
-      --green-light: #dce5da;
-      --orange: #e8875d;
-      --line: rgba(32, 37, 31, .14);
-      --card: rgba(255, 255, 255, .64);
+      --paper: #0d1420;
+      --paper-deep: #111a28;
+      --ink: #eef1f5;
+      --muted: #adb7c5;
+      --green: #31c48d;
+      --green-light: #17382d;
+      --orange: #31c48d;
+      --line: rgba(238, 241, 245, .12);
+      --card: rgba(255, 255, 255, .045);
       --serif: Georgia, "Times New Roman", serif;
       --sans: "Segoe UI", Arial, sans-serif;
       --radius: 22px;
@@ -68,7 +68,7 @@
       z-index: 10;
       top: 0;
       border-bottom: 1px solid var(--line);
-      background: rgba(245, 242, 235, .88);
+      background: rgba(13, 20, 32, .88);
       backdrop-filter: blur(16px);
     }
 
@@ -436,34 +436,6 @@
       padding-block: 92px;
     }
 
-    .routes-ready .route-view:not(.is-active) {
-      display: none !important;
-    }
-
-    .route-view.is-active {
-      min-height: calc(100vh - 76px);
-      min-height: calc(100svh - 76px);
-      animation: route-enter .38s cubic-bezier(.2, .7, .2, 1) both;
-    }
-
-    @keyframes route-enter {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .route-view.is-active {
-        animation: none;
-      }
-    }
-
     .section-heading {
       margin-bottom: 42px;
     }
@@ -541,6 +513,67 @@
       margin-bottom: 0;
       color: var(--muted);
       font-size: .92rem;
+    }
+
+    .technology-stack {
+      margin-top: 40px;
+    }
+
+    .hero > .technology-stack {
+      display: none;
+    }
+
+    .technology-stack > h3 {
+      margin: 0 0 18px;
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 400;
+    }
+
+    .tech-lane {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .tech-lane:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .tech-lane h4 {
+      margin: 7px 0 0;
+      color: var(--green);
+      font-size: .82rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .tech-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tech-item {
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--card);
+      font-size: .86rem;
+      font-weight: 650;
+    }
+
+    .tech-item img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
     }
 
     .icon {
@@ -663,6 +696,21 @@
       font-family: var(--serif);
       font-size: 4rem;
       letter-spacing: -.08em;
+    }
+
+    .life-photo {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: var(--paper-deep);
+    }
+
+    .project-screenshot {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: var(--paper-deep);
     }
 
     .project-art::after {
@@ -1056,7 +1104,7 @@
         display: none;
       }
 
-      .hero.route-view.is-active {
+      .hero.route-view {
         min-height: 0;
         grid-template-columns: 1fr;
         gap: 43px;
@@ -1081,6 +1129,11 @@
 
       .values-grid {
         grid-template-columns: 1fr;
+      }
+
+      .tech-lane {
+        grid-template-columns: 1fr;
+        gap: 6px;
       }
 
       .value-card {
@@ -1141,16 +1194,16 @@
   <header class="topbar">
     <nav class="nav wrap" aria-label="Navigasi utama">
       <a class="brand" href="#beranda" aria-label="Kembali ke beranda">
-        <span class="brand-mark" aria-hidden="true">N</span>
-        <span>RUANG PERSONAL</span>
+        <span class="brand-mark" aria-hidden="true">F</span>
+        <span>Fathi </span>
       </a>
       <div class="nav-links" id="primary-navigation">
-        <a href="#tentang">Tentang</a>
-        <a href="#nilai">Nilai hidup</a>
-        <a href="#keahlian">Keahlian</a>
-        <a href="#karya">Karya</a>
-        <a href="#perjalanan">Perjalanan</a>
-        <a href="#kontak">Kontak</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#research">Research</a>
+        <a href="#life">Life</a>
+        <a href="#contact">Contact</a>
       </div>
       <div class="nav-actions">
         <button class="icon-button" id="theme-toggle" type="button" aria-label="Aktifkan tema gelap" title="Ganti tema">
@@ -1164,285 +1217,186 @@
   </header>
 
   <main>
-    <section class="hero wrap route-view is-active" id="beranda" data-route="beranda">
+    <section class="hero wrap route-view" id="beranda" data-route="beranda">
       <div class="hero-content reveal">
         <span class="eyebrow">Halo, senang bertemu denganmu</span>
-        <h1>Saya <em>[Nama Kamu]</em>, sedang bertumbuh.</h1>
+        <h1>Halo, saya <em> Fathi </em>.</h1>
         <p class="hero-copy">
-          Saya [profesi atau peran] yang berfokus pada [bidang utama]. Di sini
-          saya membagikan karya, proses, dan ide yang saya kembangkan dengan
-          rasa ingin tahu, ketelitian, dan kemauan untuk terus belajar.
+          Saya adalah mahasiswa STEI-K ITB yang tertarik dengan AI, Software Engineer, dan Full Stack Web Development.
         </p>
         <div class="actions">
-          <a class="button" href="#tentang">Kenali saya <span aria-hidden="true">↘</span></a>
-          <a class="button secondary" href="#kontak">Hubungi saya</a>
+          <a class="button" href="#projects">Lihat Proyek <span aria-hidden="true">↓</span></a>
+          <a class="button secondary" href="CV%20Fathi.pdf" download="CV Fathi.pdf">Download CV</a>
         </div>
         <div class="hero-meta">
-          <span class="availability">[Status / kesempatan yang terbuka]</span>
-          <span>[Kota, Indonesia]</span>
+          <span >Terbuka untuk kolaborasi dan kesempatan baru</span>
+          <span>[Jakarta, Indonesia]</span>
         </div>
       </div>
 
-      <div class="profile-card reveal" role="group" aria-labelledby="profile-name">
-        <div class="profile-topline">
-          <span class="profile-index">Portofolio pribadi</span>
-          <span class="profile-index">[Tahun]</span>
-        </div>
-        <div class="profile-mark" aria-hidden="true">✳</div>
-        <div class="profile-copy">
-          <p>Berangkat dari rasa ingin tahu</p>
-          <h2 id="profile-name">[Nama Kamu]</h2>
-        </div>
-        <div class="profile-bottom">
-          <div>
-            <small>Fokus saat ini</small>
-            <strong>[Bidang / tujuan utama]</strong>
-          </div>
-          <a class="profile-arrow" href="#tentang" aria-label="Lihat cerita tentang saya">↘</a>
+          
         </div>
       </div>
     </section>
 
-    <section class="wrap route-view" id="tentang" data-route="tentang">
+    <section class="wrap route-view" id="about" data-route="about">
       <div class="section-heading reveal">
-        <span class="eyebrow">Sedikit cerita</span>
-        <h2>Halaman kecil tentang siapa saya.</h2>
+        <span class="eyebrow">About</span>
+        <h2>Membangun hal yang berguna, sejak baris pertama.</h2>
         <p>
-          Bukan hanya daftar pencapaian, tapi juga tentang hal yang saya sukai,
-          pelajari, dan ingin lakukan selanjutnya.
+          Saya adalah mahasiswa STEI_K ITB yang tertarik dengan AI, Software Engineer, dan Full Stack Web Development. Saya menikmati proses belajar dan berkembang. Mulai dari memahami kebutuhan, merancang solusi, membangun, menguji, hingga meluncurkannya—saya senang terlibat di setiap tahap. Cara terbaik belajar bagi saya adalah dengan membangun sesuatu yang benar-benar dipakai.
         </p>
       </div>
-      <div class="about-grid">
-        <article class="panel story reveal">
-          <h3>Cerita saya</h3>
-          <p>
-            Nama saya <strong>[Nama Kamu]</strong>. Saat ini saya sedang
-            [sekolah / kuliah / bekerja] di bidang <strong>[bidangmu]</strong>.
-            Saya menikmati proses belajar, terutama ketika bisa mengubah ide
-            sederhana menjadi sesuatu yang bermanfaat.
+      
+            
           </p>
-          <p>
-            Di waktu luang, biasanya saya menghabiskan waktu dengan
-            [hobi pertama], [hobi kedua], atau mencari inspirasi dari hal-hal
-            kecil di sekitar. Saya ingin terus berkembang tanpa kehilangan
-            rasa penasaran dan kepedulian kepada orang lain.
-          </p>
-          <p>
-            Saat ini, fokus saya adalah <strong>[tujuan yang sedang kamu kejar]</strong>.
-            Saya terbuka untuk berkenalan, bertukar ide, dan bekerja sama dalam
-            proyek yang membawa dampak baik.
-          </p>
-        </article>
-        <div class="info-stack">
-          <article class="panel info-card reveal">
-            <span class="icon" aria-hidden="true">✦</span>
-            <h3>Yang saya sukai</h3>
-            <p>[Contoh: belajar hal baru, membuat sesuatu, membaca, atau berolahraga.]</p>
-          </article>
-          <article class="panel info-card reveal">
-            <span class="icon" aria-hidden="true">⌁</span>
-            <h3>Yang sedang dipelajari</h3>
-            <p>[Tuliskan keterampilan, mata pelajaran, bahasa, atau bidang yang sedang dipelajari.]</p>
-          </article>
-          <article class="panel info-card reveal">
-            <span class="icon" aria-hidden="true">↗</span>
-            <h3>Impian berikutnya</h3>
-            <p>[Ceritakan satu impian atau langkah kecil yang sedang kamu usahakan.]</p>
-          </article>
+
+        </div>
+      </div>
+      <div class="technology-stack reveal" id="technology-stack">
+        <h3>Technology stack</h3>
+        <div class="tech-lane">
+          <h4>Core Languages</h4>
+          <div class="tech-items">
+            <span class="tech-item"><img src="https://www.wisee.info/python-original.svg" alt="" loading="lazy">Python</span>
+            <span class="tech-item"><img src="https://www.wisee.info/javascript-original.svg" alt="" loading="lazy">JavaScript</span>
+          </div>
+        </div>
+        <div class="tech-lane">
+          <h4>Frontend Development</h4>
+          <div class="tech-items">
+            <span class="tech-item"><img src="https://www.wisee.info/html5-original.svg" alt="" loading="lazy">HTML5</span>
+            <span class="tech-item"><img src="https://www.wisee.info/css3-original.svg" alt="" loading="lazy">CSS3</span>
+            <span class="tech-item"><img src="https://www.wisee.info/tailwindcss-original.svg" alt="" loading="lazy">Tailwind CSS</span>
+          </div>
+        </div>
+        <div class="tech-lane">
+          <h4>Backend</h4>
+          <div class="tech-items">
+            <span class="tech-item">Still learning</span>
+          </div>
+        </div>
+        <div class="tech-lane">
+          <h4>AI/ML</h4>
+          <div class="tech-items">
+            <span class="tech-item">Still learning</span>
+          </div>
+        </div>
+        <div class="tech-lane">
+          <h4>Infrastructure</h4>
+          <div class="tech-items">
+            <span class="tech-item"><img src="https://www.wisee.info/git-original.svg" alt="" loading="lazy">Git</span>
+            <span class="tech-item"><img src="https://www.wisee.info/github.svg" alt="" loading="lazy">GitHub</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="soft-section route-view" id="nilai" data-route="nilai">
+    <section class="soft-section route-view" id="projects" data-route="projects">
       <div class="wrap">
         <div class="section-heading reveal">
-          <span class="eyebrow">Pegangan saya</span>
-          <h2>Nilai yang ingin saya bawa.</h2>
+          <span class="eyebrow">Projects </span>
+          <h2>Tiga hal yang paling mewakili cara saya bekerja.</h2>
           <p>
-            Prinsip-prinsip ini membantu saya mengambil keputusan dan
-            memperlakukan orang-orang di sekitar.
-          </p>
-        </div>
-        <div class="values-grid">
-          <article class="value-card reveal">
-            <span class="value-number">01</span>
-            <h3>Terus belajar</h3>
-            <p>Saya tidak harus langsung mahir. Yang penting berani mulai, mau bertanya, dan konsisten memperbaiki diri.</p>
-          </article>
-          <article class="value-card reveal">
-            <span class="value-number">02</span>
-            <h3>Jujur dan bertanggung jawab</h3>
-            <p>Saya berusaha menepati janji, mengakui kesalahan, dan menyelesaikan hal yang sudah saya mulai.</p>
-          </article>
-          <article class="value-card reveal">
-            <span class="value-number">03</span>
-            <h3>Peduli dan bekerja sama</h3>
-            <p>Saya percaya hasil yang baik bisa tumbuh dari rasa hormat, komunikasi yang jelas, dan saling membantu.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="wrap route-view" id="keahlian" data-route="keahlian">
-      <div class="skills-layout">
-        <div class="section-heading reveal">
-          <span class="eyebrow">Hal yang saya kembangkan</span>
-          <h2>Keahlian dan minat.</h2>
-          <p class="skills-intro">
-            Bagian ini bisa kamu sesuaikan dengan kemampuan yang benar-benar
-            kamu miliki. Tingkat kemampuan hanyalah gambaran diri, bukan ukuran
-            nilai diri.
-          </p>
-        </div>
-        <div class="skill-list reveal">
-          <article class="skill-item">
-            <span>01 / Keahlian</span>
-            <strong>[Keahlian utama]</strong>
-          </article>
-          <article class="skill-item">
-            <span>02 / Keahlian</span>
-            <strong>[Keahlian kedua]</strong>
-          </article>
-          <article class="skill-item">
-            <span>03 / Keahlian</span>
-            <strong>[Keahlian ketiga]</strong>
-          </article>
-          <article class="skill-item">
-            <span>04 / Cara bekerja</span>
-            <strong>[Contoh: komunikasi, riset, atau kerja tim]</strong>
-          </article>
-          <p class="skill-note">Pilih kemampuan yang benar-benar kamu kuasai, lalu jelaskan lewat contoh nyata di bagian karya.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="soft-section route-view" id="karya" data-route="karya">
-      <div class="wrap">
-        <div class="section-heading reveal">
-          <span class="eyebrow">Yang pernah saya buat</span>
-          <h2>Karya, proyek, dan pengalaman.</h2>
-          <p>
-            Tidak harus proyek besar. Tugas sekolah, kegiatan komunitas,
-            eksperimen pribadi, dan hal yang pernah kamu bantu juga layak
-            diceritakan.
+            Produk nyata, sistem yang dipikirkan secara menyeluruh,
+            dan pengalaman yang berpusat pada pengguna.
           </p>
         </div>
         <div class="projects-grid">
           <article class="panel project-card reveal">
-            <div class="project-art" aria-hidden="true">01</div>
+            <a href="https://smartaruna.github.io/kalkulator-indeks-sem-1/" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi Kalkulator IP Semester 1">
+              <img class="project-screenshot" src="images/kalkulator-ip-semester-1.png" alt="Tangkapan layar kalkulator IP Semester 1" loading="lazy">
+            </a>
             <div class="project-content">
-              <span class="project-type">Proyek pribadi</span>
-              <h3>[Nama proyek pertama]</h3>
-              <p>[Jelaskan apa yang kamu buat, alasan memulainya, dan hal yang kamu pelajari.]</p>
-              <div class="project-tags"><span>[Peran]</span><span>[Keahlian]</span><span>[Tahun]</span></div>
-              <a class="text-link" href="#kontak">Diskusikan proyek ↗</a>
+              <span class="project-type">Kalkulator Indeks IP</span>
+              <h3>
+                <a href="https://smartaruna.github.io/kalkulator-indeks-sem-1/" target="_blank" rel="noopener noreferrer">
+                  Kunjungi Kalkulator IP Semester 1 ↗
+                </a>
+              </h3>
+              <p>Menghitung Indeks IP Mahasiswa STEI-K ITB Semester 1.</p>
+              <a class="text-link" href="https://smartaruna.github.io/kalkulator-indeks-sem-1/" target="_blank" rel="noopener noreferrer">Buka kalkulator ↗</a>
             </div>
           </article>
-          <article class="panel project-card reveal">
-            <div class="project-art" aria-hidden="true">02</div>
-            <div class="project-content">
-              <span class="project-type">Sekolah / pekerjaan</span>
-              <h3>[Nama proyek kedua]</h3>
-              <p>[Tuliskan kontribusimu, siapa yang bekerja bersama, dan hasil yang dicapai.]</p>
-              <div class="project-tags"><span>[Peran]</span><span>[Keahlian]</span><span>[Tahun]</span></div>
-              <a class="text-link" href="#kontak">Diskusikan proyek ↗</a>
-            </div>
-          </article>
-          <article class="panel project-card reveal">
-            <div class="project-art" aria-hidden="true">03</div>
-            <div class="project-content">
-              <span class="project-type">Komunitas</span>
-              <h3>[Kegiatan atau kontribusi]</h3>
-              <p>[Ceritakan kegiatan yang kamu ikuti dan dampaknya bagi diri sendiri atau orang lain.]</p>
-              <div class="project-tags"><span>[Peran]</span><span>[Kontribusi]</span><span>[Tahun]</span></div>
-              <a class="text-link" href="#kontak">Diskusikan proyek ↗</a>
-            </div>
-          </article>
-          <article class="panel project-card reveal">
-            <div class="project-art" aria-hidden="true">04</div>
-            <div class="project-content">
-              <span class="project-type">Sedang dipelajari</span>
-              <h3>[Proyek yang akan datang]</h3>
-              <p>[Bagikan ide yang sedang kamu rencanakan atau kemampuan baru yang sedang dicoba.]</p>
-              <div class="project-tags"><span>[Tujuan]</span><span>[Keahlian]</span><span>[Tahun]</span></div>
-              <a class="text-link" href="#kontak">Diskusikan proyek ↗</a>
-            </div>
-          </article>
+          
         </div>
       </div>
     </section>
 
-    <section class="wrap route-view" id="perjalanan" data-route="perjalanan">
+    <section class="wrap route-view" id="experience" data-route="experience">
       <div class="section-heading reveal">
-        <span class="eyebrow">Langkah demi langkah</span>
-        <h2>Perjalanan saya sejauh ini.</h2>
+        <span class="eyebrow">Experience </span>
+        <h2>Kesempatan untuk belajar dan memberi kontribusi.</h2>
         <p>
-          Isi dengan pengalaman penting dalam hidupmu. Urutannya boleh berupa
-          tahun, jenjang, atau momen yang paling berkesan.
+          Pengalaman yang membentuk cara saya bekerja: mengambil tanggung jawab,
+          memahami konteks, dan membangun dengan tujuan.
         </p>
       </div>
       <div class="timeline">
         <article class="timeline-item reveal">
-          <span class="timeline-year">[Tahun]</span>
+          <span class="timeline-year">Sep–Okt 2026</span>
           <div>
-            <h3>[Momen awal yang berkesan]</h3>
-            <p>[Contoh: mulai tertarik pada bidang tertentu, ikut kegiatan, atau mencoba hal baru.]</p>
+            <h3>Wisuda Oktober ITB 2026</h3>
+            <p>Staff Sponsorship</p>
           </div>
-        </article>
-        <article class="timeline-item reveal">
-          <span class="timeline-year">[Tahun]</span>
-          <div>
-            <h3>[Pengalaman yang mengajarkan sesuatu]</h3>
-            <p>[Ceritakan tantangan, peranmu, dan pelajaran yang kamu bawa setelahnya.]</p>
-          </div>
-        </article>
-        <article class="timeline-item reveal">
-          <span class="timeline-year">Sekarang</span>
-          <div>
-            <h3>[Fokus dan tujuan saat ini]</h3>
-            <p>[Tuliskan hal yang sedang kamu kerjakan dan langkah kecil berikutnya.]</p>
-          </div>
-        </article>
+        
       </div>
     </section>
 
-    <section class="wrap route-view" id="kutipan" data-route="perjalanan" aria-label="Kutipan pribadi">
-      <div class="quote-box reveal">
-        <blockquote>
-          “Saya tidak harus mengetahui seluruh jawabannya hari ini. Saya hanya
-          perlu terus melangkah dengan niat yang baik.”
-        </blockquote>
-        <p>Pengingat untuk diri sendiri</p>
+    
+
+    <section class="wrap route-view" id="life" data-route="life">
+      <div class="section-heading reveal">
+        <span class="eyebrow">Life </span>
+        <h2>Di luar layar, saya terus bertumbuh.</h2>
+        <p>
+          Kehidupan di kuliah memberi konteks, energi, dan perspektif
+          yang ikut membentuk cara saya membuat sesuatu.
+        </p>
       </div>
+      <div class="projects-grid">
+        <article class="panel project-card reveal">
+          <img class="life-photo" src="images/life-stei-k-2026.jpg" alt="Foto bersama mahasiswa STEI-K di ITB" loading="lazy">
+          <div class="project-content">
+            <span class="project-type">ITB</span>
+            <h3>STEI-K ITB 2026</h3>
+       
+          </div>
+        </article>
+
     </section>
 
-    <section class="soft-section route-view" id="kontak" data-route="kontak">
+    <section class="soft-section route-view" id="contact" data-route="contact">
       <div class="wrap contact-grid">
         <div class="section-heading reveal">
-          <span class="eyebrow">Mari terhubung</span>
-          <h2>Punya ide atau ingin menyapa?</h2>
+          <span class="eyebrow">Contact </span>
+          <h2>Mari terhubung</h2>
           <p class="contact-copy">
-            Saya senang berkenalan dan mendengar cerita orang lain. Kamu bisa
-            menghubungi saya lewat salah satu cara berikut.
+            Saya terbuka untuk berdiskusi tentang engineering, riset,
+            kolaborasi produk, atau kesempatan yang tak terduga.
           </p>
           <div class="actions">
-            <a class="button" href="mailto:emailkamu@example.com">Kirim email <span aria-hidden="true">↗</span></a>
+            <a class="button" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=arunarizki2008@gmail.com" target="_blank" rel="noopener noreferrer">Kirim email <span aria-hidden="true">↗</span></a>
             <button class="button secondary" id="copy-email" type="button">Salin email</button>
           </div>
           <span class="copy-status" id="copy-email-status" role="status" aria-live="polite"></span>
         </div>
         <div class="contact-list reveal">
-          <a class="contact-row" href="mailto:emailkamu@example.com">
+          <a class="contact-row" href="mailto:arunarizki2008@gmail.com">
             <span class="icon" aria-hidden="true">@</span>
-            <span><small>Email</small><strong>emailkamu@example.com</strong></span>
+            <span><small>Email</small><strong>arunarizki2008@gmail.com</strong></span>
           </a>
-          <a class="contact-row" href="https://www.instagram.com/" target="_blank" rel="noreferrer">
+          <a class="contact-row" href="https://github.com/SmartAruna" target="_blank" rel="noreferrer">
+            <span class="icon" aria-hidden="true">⌘</span>
+            <span><small>GitHub</small><strong>SmartAruna</strong></span>
+          </a>
+          <a class="contact-row" href="https://www.instagram.com/thirizki._" target="_blank" rel="noreferrer">
             <span class="icon" aria-hidden="true">◎</span>
-            <span><small>Instagram</small><strong>@usernamekamu</strong></span>
+            <span><small>Instagram</small><strong>@thirizki._</strong></span>
           </a>
-          <a class="contact-row" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+          <a class="contact-row" href="https://www.linkedin.com/in/fathi-rizki-40a691452/" target="_blank" rel="noopener noreferrer">
             <span class="icon" aria-hidden="true">in</span>
-            <span><small>LinkedIn / portofolio</small><strong>[Tautan profil kamu]</strong></span>
+            <span><small>LinkedIn</small><strong>Fathi Rizki</strong></span>
           </a>
         </div>
       </div>
@@ -1451,7 +1405,7 @@
 
   <footer class="footer">
     <div class="wrap footer-inner">
-      <span>© <span id="year"></span> [Nama Kamu]. Dibuat dengan hati dan rasa ingin tahu.</span>
+      <span>© <span id="year"></span> Fathi</span>
       <a href="#beranda">Kembali ke atas ↑</a>
     </div>
   </footer>
@@ -1471,16 +1425,7 @@
     const revealItems = document.querySelectorAll(".reveal");
     const navigationLinks = document.querySelectorAll(".nav-links a");
     const routeViews = [...document.querySelectorAll(".route-view[data-route]")];
-    const routes = new Map();
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    routeViews.forEach((view) => {
-      const group = routes.get(view.dataset.route) || [];
-      group.push(view);
-      routes.set(view.dataset.route, group);
-    });
-
-    root.classList.add("routes-ready");
 
     const closeMenu = () => {
       navigation.classList.remove("is-open");
@@ -1489,46 +1434,15 @@
       menuToggle.querySelector("span").textContent = "☰";
     };
 
-    const showRoute = (route, addToHistory, moveFocus = true) => {
-      const activeViews = routes.get(route);
-      if (!activeViews) return;
+    const scrollToSection = (destination, addToHistory = true) => {
+      const section = document.getElementById(destination);
+      if (!section) return;
 
-      routeViews.forEach((view) => {
-        const isActive = activeViews.includes(view);
-        view.classList.toggle("is-active", isActive);
-        view.setAttribute("aria-hidden", String(!isActive));
-        view.inert = !isActive;
-      });
-
-      navigationLinks.forEach((link) => {
-        if (link.hash === `#${route}`) {
-          link.setAttribute("aria-current", "page");
-        } else {
-          link.removeAttribute("aria-current");
-        }
-      });
-
-      const currentLink = [...navigationLinks].find((link) => link.hash === `#${route}`);
-      document.title = route === "beranda"
-        ? "Tentang Saya — [Nama Kamu]"
-        : `${currentLink ? currentLink.textContent.trim() : "Perjalanan"} — [Nama Kamu]`;
-      progressBar.style.transform = `scaleX(${(Array.from(routes.keys()).indexOf(route) + 1) / routes.size})`;
       closeMenu();
-
-      if (moveFocus) {
-        const heading = activeViews[0].querySelector("h1, h2");
-        if (heading) {
-          heading.setAttribute("tabindex", "-1");
-          heading.focus({ preventScroll: true });
-        }
+      section.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+      if (addToHistory && window.location.hash !== `#${destination}`) {
+        window.history.pushState(null, "", `#${destination}`);
       }
-
-      if (addToHistory && window.location.hash !== `#${route}`) {
-        window.history.pushState({ route }, "", `#${route}`);
-      }
-
-      window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
-      updateScrollUI();
     };
 
     themeToggle.addEventListener("click", () => {
@@ -1603,26 +1517,28 @@
       }
 
       const destination = link.hash.slice(1);
-      const route = routes.has(destination)
-        ? destination
-        : routeViews.find((view) => view.id === destination)?.dataset.route;
-
-      if (!route) return;
+      if (!document.getElementById(destination)) return;
       event.preventDefault();
-      showRoute(route, true);
-    });
-
-    window.addEventListener("popstate", () => {
-      const requestedRoute = window.location.hash.slice(1);
-      const requestedView = routeViews.find((view) => view.id === requestedRoute);
-      const route = routes.has(requestedRoute)
-        ? requestedRoute
-        : requestedView?.dataset.route || "beranda";
-      showRoute(route, false);
+      scrollToSection(destination);
     });
 
     const updateScrollUI = () => {
       backToTop.classList.toggle("is-visible", window.scrollY > 500);
+      const scrollLimit = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = scrollLimit > 0 ? window.scrollY / scrollLimit : 0;
+      progressBar.style.transform = `scaleX(${Math.min(1, Math.max(0, progress))})`;
+
+      let activeId = "beranda";
+      routeViews.forEach((view) => {
+        if (view.getBoundingClientRect().top <= 140) activeId = view.dataset.route;
+      });
+      navigationLinks.forEach((link) => {
+        if (link.hash === `#${activeId}`) {
+          link.setAttribute("aria-current", "location");
+        } else {
+          link.removeAttribute("aria-current");
+        }
+      });
     };
 
     window.addEventListener("scroll", updateScrollUI, { passive: true });
@@ -1643,11 +1559,7 @@
       revealItems.forEach((item) => item.classList.add("is-visible"));
     }
 
-    const requestedView = routeViews.find((view) => view.id === window.location.hash.slice(1));
-    const initialRoute = routes.has(window.location.hash.slice(1))
-      ? window.location.hash.slice(1)
-      : requestedView?.dataset.route || "beranda";
-    showRoute(initialRoute, false, false);
+    updateScrollUI();
   </script>
 </body>
 </html>
